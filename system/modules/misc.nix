@@ -4,10 +4,10 @@
 
   fonts = {
     enableDefaultPackages = true;
-    fontconfig = {
-      antialias = true;
-      hinting.style = "full";
-    };
+    # fontconfig = {
+    #   antialias = true;
+    #   hinting.style = "full";
+    # };
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
