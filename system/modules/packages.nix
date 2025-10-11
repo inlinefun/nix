@@ -13,7 +13,7 @@
     bun
 
     jetbrains.idea-community-src
-    android-studio
+    jetbrains-toolbox
   ];
 
 }
