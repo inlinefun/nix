@@ -14,6 +14,10 @@
 
     jetbrains.idea-community-src
     jetbrains-toolbox
+
+    deno
+    rustup
+    go
   ];
 
 }
