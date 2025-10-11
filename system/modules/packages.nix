@@ -11,6 +11,9 @@
     prismlauncher
     gnome-tweaks
     bun
+
+    jetbrains.idea-community-src
+    android-studio
   ];
 
 }
