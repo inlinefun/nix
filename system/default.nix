@@ -1,12 +1,12 @@
 { ... }:
 {
   imports = [
+    ./packages
     ./programs
     ./boot.nix
     ./desktop.nix
     ./hardware.nix
     ./misc.nix
-    ./packages.nix
     ./services.nix
     ./users.nix
   ];
