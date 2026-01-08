@@ -5,6 +5,7 @@
     ./programs
     ./boot.nix
     ./desktop.nix
+    ./drivers.nix
     ./hardware.nix
     ./misc.nix
     ./services.nix
