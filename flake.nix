@@ -2,10 +2,15 @@
   description = "inlinefun's NixOS configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
       nixpkgs,
+      home-manager,
       ...
     }@inputs:
     let
@@ -23,6 +28,7 @@
         };
         modules = [
           ./system
+          home-manager.nixosModules.default
         ];
       };
     };
