@@ -23,6 +23,15 @@
     };
   };
 
+  nix.settings.extra-sandbox-paths = [
+    "/var/cache/sccache"
+    "/var/cache/cpm"
+  ];
+  systemd.tmpfiles.rules = [
+    "d /var/cache/sccache 0775 root nixbld - -"
+    "d /var/cache/cpm     0775 root nixbld - -"
+  ];
+
   time = {
     hardwareClockInLocalTime = false;
     timeZone = "Asia/Kolkata";
