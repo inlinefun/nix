@@ -12,7 +12,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-    niri.enable = true;
     nix-index = {
       enable = true;
       enableZshIntegration = true;

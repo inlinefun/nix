@@ -3,6 +3,7 @@
 let
   packages = with pkgs; [
     bibata-cursors
+    grim
     hyprcursor
     hyprland-qt-support
     hyprland-protocols
@@ -10,18 +11,25 @@ let
     hyprpaper
     hyprpolkitagent
     kitty
-    matugen
     mako
+    matugen
+    quickshell
+    slurp
+    starship
     rofi
+  ];
+  qt6Packages = with pkgs.qt6Packages; [
+    qt6ct
   ];
 in
 {
-  environment.systemPackages = packages;
+  environment.systemPackages = packages ++ qt6Packages;
   programs = {
     hyprland = {
       enable = true;
       xwayland.enable = true;
     };
+    niri.enable = true;
     starship.enable = true;
     uwsm = {
       enable = true;
