@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768024011,
-        "narHash": "sha256-nkfT0XRgt3c2E4qyFb3dZmsDBmJ6rm7vv6WSCceFAQ0=",
+        "lastModified": 1768044606,
+        "narHash": "sha256-RlZmYORBa2K/LYQC5uDGkhGiagGkQKg4CtFqxUXteqo=",
         "owner": "inlinefun",
         "repo": "nix-packages",
-        "rev": "d2b1254c4959bda2e591c8a51d0390c3b2967277",
+        "rev": "47751d3eac45c2858590b401dc40aff49ad76df5",
         "type": "github"
       },
       "original": {
