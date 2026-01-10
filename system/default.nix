@@ -7,6 +7,7 @@
     ./boot.nix
     ./desktop.nix
     ./drivers.nix
+    ./fonts.nix
     ./hardware.nix
     ./misc.nix
     ./services.nix
