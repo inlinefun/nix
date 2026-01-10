@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
-  # literally ONE entire package, lmao
+  nixpkgs.config.eden.cacheBuilds = true;
   environment.systemPackages = with pkgs; [
     prismlauncher
+    eden
   ];
 }

@@ -6,6 +6,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    custom-packages = {
+      url = "github:inlinefun/nix-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {

@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./overlays.nix
     ./packages
     ./programs
     ./boot.nix

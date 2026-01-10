@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "custom-packages": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1768024011,
+        "narHash": "sha256-nkfT0XRgt3c2E4qyFb3dZmsDBmJ6rm7vv6WSCceFAQ0=",
+        "owner": "inlinefun",
+        "repo": "nix-packages",
+        "rev": "d2b1254c4959bda2e591c8a51d0390c3b2967277",
+        "type": "github"
+      },
+      "original": {
+        "owner": "inlinefun",
+        "repo": "nix-packages",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -38,6 +58,7 @@
     },
     "root": {
       "inputs": {
+        "custom-packages": "custom-packages",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
