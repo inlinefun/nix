@@ -17,6 +17,7 @@ let
     slurp
     starship
     rofi
+    xwayland-satellite
   ];
   qt6Packages = with pkgs.qt6Packages; [
     qt6ct
