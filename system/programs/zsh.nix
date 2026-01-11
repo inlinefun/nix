@@ -15,7 +15,7 @@
         "history"
       ];
     };
-    syntax-highlighting = {
+    syntaxHighlighting = {
       enable = true;
       highlighters = [
         "main"
