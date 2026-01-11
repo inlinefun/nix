@@ -15,7 +15,11 @@ let
     bun
     go
   ];
+  compilers = with pkgs; [
+    cmake
+    gnumake
+  ];
 in
 {
-  environment.systemPackages = languageServers ++ editors ++ runtimes;
+  environment.systemPackages = languageServers ++ editors ++ runtimes ++ compilers;
 }
