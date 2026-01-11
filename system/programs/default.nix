@@ -6,5 +6,6 @@
     ./gaming.nix
     ./general.nix
     ./wayland.nix
+    ./zsh.nix
   ];
 }

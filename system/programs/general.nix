@@ -22,11 +22,5 @@
       enableVirtualCamera = true;
     };
     xwayland.enable = true;
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      enableGlobalCompInit = true;
-      enableLsColors = true;
-    };
   };
 }
