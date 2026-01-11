@@ -3,6 +3,7 @@
 let
   cliPackages = with pkgs; [
     fastfetch
+    patchelf
   ];
 in
 {
