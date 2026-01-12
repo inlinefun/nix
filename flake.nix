@@ -41,7 +41,7 @@
         in
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          specialArgs = {
+          extraSpecialArgs = {
             inherit inputs;
             inherit defaults;
           };
