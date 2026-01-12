@@ -10,6 +10,7 @@ let
     hyprland-protocols
     hyprlock
     hyprpaper
+    hyprpicker
     hyprpolkitagent
     kitty
     mako
@@ -20,6 +21,7 @@ let
     slurp
     starship
     rofi
+    wl-clipboard
     xwayland-satellite
   ];
   qt6Packages = with pkgs.qt6Packages; [
