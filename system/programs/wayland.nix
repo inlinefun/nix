@@ -3,6 +3,7 @@
 let
   packages = with pkgs; [
     bibata-cursors
+    brightnessctl
     grim
     hyprcursor
     hyprland-qt-support
@@ -13,6 +14,8 @@ let
     kitty
     mako
     matugen
+    playerctl
+    power-profiles-daemon
     quickshell
     slurp
     starship

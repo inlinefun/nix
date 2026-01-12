@@ -35,5 +35,17 @@
           home-manager.nixosModules.default
         ];
       };
+      homeConfigurations.${defaults.mainUser} =
+        let
+          pkgs = nixpkgs.legacyPackages.${defaults.system};
+        in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          specialArgs = {
+            inherit inputs;
+            inherit defaults;
+          };
+          modules = [ ./home ];
+        };
     };
 }

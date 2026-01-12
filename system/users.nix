@@ -1,8 +1,12 @@
 { defaults, pkgs, ... }:
+let
+  username = defaults.mainUser;
+in
 {
-  users.users.${defaults.mainUser} = {
+  users.users.${username} = {
     extraGroups = [ "wheel" ];
     isNormalUser = true;
+    home = "/home/${username}";
     shell = pkgs.zsh;
   };
 }
