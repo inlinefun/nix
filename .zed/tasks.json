@@ -1,0 +1,9 @@
+[
+  {
+    "label": "Build NixOS configuration",
+    "command": "nixos-rebuild build --flake '.#nixos'",
+    "allow_concurrent_runs": false,
+    "show_command": false,
+    "use_new_terminal": false,
+  },
+]
