@@ -2,6 +2,10 @@
   description = "inlinefun's NixOS configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -23,6 +27,9 @@
         };
         modules = [
           ./system
+
+          ./home
+          inputs.hjem.nixosModules.default
         ];
       };
     };
