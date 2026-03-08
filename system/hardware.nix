@@ -27,22 +27,35 @@
     "/" = {
       device = "/dev/disk/by-uuid/2e2d2a28-9b6b-4afe-acbf-85486bce3046";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [
+        "subvol=@"
+        "compress=zstd"
+      ];
     };
     "/home" = {
       device = "/dev/disk/by-uuid/2e2d2a28-9b6b-4afe-acbf-85486bce3046";
       fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [
+        "subvol=@home"
+        "compress=zstd"
+      ];
     };
     "/nix" = {
       device = "/dev/disk/by-uuid/2e2d2a28-9b6b-4afe-acbf-85486bce3046";
       fsType = "btrfs";
-      options = [ "subvol=@nix" ];
+      options = [
+        "subvol=@nix"
+        "compress=zstd"
+        "noatime"
+      ];
     };
     "/swap" = {
       device = "/dev/disk/by-uuid/2e2d2a28-9b6b-4afe-acbf-85486bce3046";
       fsType = "btrfs";
-      options = [ "subvol=@swap" ];
+      options = [
+        "subvol=@swap"
+        "noatime"
+      ];
     };
     "/boot" = {
       device = "/dev/disk/by-uuid/B542-1C62";
@@ -54,7 +67,12 @@
     };
   };
 
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault defaults.system;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
