@@ -1,4 +1,5 @@
 { ... }:
+
 {
   services.libinput.enable = true;
   services.pipewire = {
