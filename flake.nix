@@ -6,10 +6,6 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs =
     { nixpkgs, ... }@inputs:
@@ -20,7 +16,6 @@
             inherit inputs;
           };
           modules = [
-            inputs.stylix.nixosModules.stylix
             inputs.hjem.nixosModules.default
             ./modules
             ./system/x515
