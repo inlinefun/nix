@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  dots = {
+    waywall.enable = true;
+  };
+}
