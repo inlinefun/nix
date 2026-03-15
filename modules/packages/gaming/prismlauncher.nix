@@ -17,22 +17,26 @@ in
 
   config = lib.mkIf cfg.enable {
 
-    environment.systemPackages = with pkgs; [
-      (prismlauncher.override {
-        jdks = [
-          temurin-jre-bin-8
-          temurin-jre-bin-17
-          temurin-jre-bin-21
-        ];
-        additionalLibs = [
-          libxt
-          libxtst
-          libxkbcommon
-          libxinerama
-        ];
-      })
-      waywall
-    ];
+    environment.systemPackages =
+      with pkgs;
+      [
+        (prismlauncher.override {
+          jdks = [
+            temurin-jre-bin-8
+            temurin-jre-bin-17
+            temurin-jre-bin-21
+          ];
+          additionalLibs = [
+            libxt
+            libxtst
+            libxkbcommon
+            libxinerama
+          ];
+        })
+      ]
+      ++ lib.optionals cfg.mcsr [
+        waywall
+      ];
 
   };
 
