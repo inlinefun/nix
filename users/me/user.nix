@@ -1,6 +1,10 @@
-{ username, ... }:
+args@{ username, ... }:
 
 {
+
+  imports = [
+    (import ../../dotfiles args)
+  ];
 
   users.users.${username} = {
     extraGroups = [ "wheel" ];
