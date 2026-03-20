@@ -55,5 +55,10 @@
       disableTouchpadAccel = false;
       allowDragClicking = true;
     };
+    niri = {
+      enable = true;
+      xwayland = true;
+      useNautilus = true;
+    };
   };
 }
