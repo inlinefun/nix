@@ -29,6 +29,7 @@
         extraFontPackages = with pkgs; [
           roboto
           inter
+          ibm-plex
         ];
       };
       compat = {
