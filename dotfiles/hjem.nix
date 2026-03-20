@@ -1,5 +1,8 @@
 { inputs, username, ... }:
 
+let
+  dots = ./src;
+in
 {
 
   hjem = {
@@ -9,7 +12,11 @@
     users.${username} = {
       user = username;
       directory = "/home/${username}";
-      impure.enable = true;
+      impure = {
+        enable = true;
+        dotsDir = dots;
+        dotsDirImpure = "/home/${username}/nix/dotfiles/src";
+      };
     };
   };
 
