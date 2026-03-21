@@ -1,8 +1,10 @@
-{ inputs, username, ... }:
+{
+  dots,
+  inputs,
+  username,
+  ...
+}:
 
-let
-  dots = "${./src}";
-in
 {
 
   hjem = {
