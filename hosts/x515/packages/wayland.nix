@@ -1,0 +1,11 @@
+{ ... }:
+
+{
+
+  packages = {
+    quickshell = {
+      enable = true;
+    };
+  };
+
+}
