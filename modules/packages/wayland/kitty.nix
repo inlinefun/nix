@@ -11,7 +11,7 @@ in
 {
 
   options.packages.kitty = {
-    enable = lib.mkEnableOption "Whether to enable kitty, the fast, feature-rich, cross-platform, GPU based terminal.";
+    enable = lib.mkEnableOption "Whether to enable kitty, the fast, feature-rich, cross-platform, GPU based terminal";
     package = lib.mkOption {
       type = lib.types.package;
       default = pkgs.kitty;

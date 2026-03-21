@@ -9,6 +9,9 @@
     quickshell = {
       enable = true;
     };
+    rofi = {
+      enable = true;
+    };
   };
 
 }
