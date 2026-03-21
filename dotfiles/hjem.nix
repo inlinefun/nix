@@ -1,7 +1,7 @@
 { inputs, username, ... }:
 
 let
-  dots = ./src;
+  dots = "${./src}";
 in
 {
 
