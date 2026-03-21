@@ -27,12 +27,12 @@ input {
     mod-key-nested "Alt"
 }
 
-output {
+output "eDP-1" {
     mode "1920x1080@64.000"
     scale 1.0
-    transform "0"
     variable-refresh-rate
     focus-at-startup
+    background-color "#161616"
     hot-corners {
         top-left
     }

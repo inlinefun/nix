@@ -17,10 +17,7 @@ in
 
   config = lib.mkIf cfg.enable {
     homeDir.${username}.config.files = {
-      # @TODO: coloring through a color palette
-      "niri" = {
-        source = dots + "/niri";
-      };
+      "niri".source = dots + "/niri";
     };
   };
 
