@@ -1,0 +1,39 @@
+input {
+    keyboard {
+        repeat-rate 25
+        repeat-delay 500
+        numlock
+    }
+    touchpad {
+        tap
+        dwt // disable while typing
+        drag true
+        natural-scroll
+        accel-speed 0.0
+        accel-profile "flat"
+        scroll-factor 1.0
+        scroll-method "two-finger"
+        middle-emulation
+    }
+    mouse {
+        accel-speed 0.0
+        accel-profile "flat"
+        scroll-factor 1.0
+    }
+    focus-follows-mouse
+    warp-mouse-to-focus mode="center-xy"
+    workspace-auto-back-and-forth
+    mod-key "Super"
+    mod-key-nested "Alt"
+}
+
+output {
+    mode "1920x1080@64.000"
+    scale 1.0
+    transform "0"
+    variable-refresh-rate
+    focus-at-startup
+    hot-corners {
+        top-left
+    }
+}

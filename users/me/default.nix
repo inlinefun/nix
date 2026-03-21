@@ -1,4 +1,4 @@
-args@{ lib, ... }:
+args@{ lib, pkgs, ... }:
 
 let
   username = "me";

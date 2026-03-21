@@ -1,0 +1,5 @@
+include "appearance.kdl"
+include "binds.kdl"
+include "devices.kdl"
+include "misc.kdl"
+include "rules.kdl"

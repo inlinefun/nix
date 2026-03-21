@@ -1,0 +1,38 @@
+layout {
+    gaps 5
+    background-color "transparent"
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.25
+        proportion 0.50
+        proportion 0.75
+    }
+    border {
+        on
+        width 2
+    }
+    focus-ring {
+        off
+    }
+    shadow {
+        off
+    }
+    tab-indicator {
+        off
+    }
+}
+
+overview {
+    zoom 0.70
+    workspace-shadow {
+        off
+    }
+}
+
+animations {
+
+}
+
+recent-windows {
+    off
+}

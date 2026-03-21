@@ -1,0 +1,10 @@
+window-rule {
+    open-maximized true
+    clip-to-geometry true
+    geometry-corner-radius 0
+}
+
+layer-rule {
+    match namespace="hyprpaper"
+    place-within-backdrop true
+}

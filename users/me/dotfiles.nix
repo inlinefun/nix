@@ -2,4 +2,8 @@
 
 {
 
+  dotfiles = {
+    niri.enable = true;
+  };
+
 }
