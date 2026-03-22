@@ -22,7 +22,6 @@ PanelWindow {
             top: parent.top
             left: parent.left
             bottom: parent.bottom
-            leftMargin: Constants.screenRadius
         }
     }
     RowLayout {
@@ -36,11 +35,11 @@ PanelWindow {
     }
     RowLayout {
         id: right
+        spacing: 2
         anchors {
             top: parent.top
             right: parent.right
             bottom: parent.bottom
-            rightMargin: Constants.screenRadius
         }
         Volume {}
         Battery {}

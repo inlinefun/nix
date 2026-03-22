@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 
+import qs.animations
 import qs.common
 
 MouseArea {
@@ -12,12 +13,17 @@ MouseArea {
     Layout.bottomMargin: Constants.barMargin
 
     implicitWidth: text.width + 16
+    hoverEnabled: true
     Rectangle {
         anchors {
             fill: parent
         }
         color: Colors.backgroundVariant
         radius: Constants.radius
+        opacity: container.containsMouse ? 1 : 0
+        Behavior on opacity {
+            AnimateNumber {}
+        }
     }
     CText {
         id: text

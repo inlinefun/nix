@@ -20,6 +20,15 @@ Singleton {
     signal onSourceVolumeChange
     signal onSourceMuteChange
 
+    function changeSinkVolume(increment: bool) {
+        let amount = 0.05 * (increment ? 1 : -1);
+        sink.audio.volume += amount;
+        sink.audio.volume = Math.max(0.0, Math.min(1.0, sink.audio.volume));
+    }
+    function toggleSinkMute() {
+        sink.audio.muted = !sinkMuted;
+    }
+
     PwObjectTracker {
         objects: [root.sink, root.source]
     }

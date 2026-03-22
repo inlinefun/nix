@@ -4,6 +4,7 @@ import Quickshell.Services.UPower
 
 import qs.animations
 import qs.common
+import qs.icons
 import qs.services
 
 MouseArea {
@@ -17,9 +18,6 @@ MouseArea {
     property color color: {
         if (PowerService.critical) {
             return Colors.red;
-        }
-        if (PowerService.charging) {
-            return Colors.magenta;
         }
         if (PowerService.profile == PowerProfile.Performance) {
             return Colors.blue;
@@ -48,6 +46,17 @@ MouseArea {
             Layout.preferredHeight: 16
             radius: Constants.radius
             color: root.color
+            FlashIcon {
+                anchors {
+                    centerIn: parent
+                }
+                size: 12
+                color: Colors.background
+                opacity: PowerService.charging ? 1 : 0
+                Behavior on opacity {
+                    AnimateNumber {}
+                }
+            }
         }
         Rectangle {
             Layout.preferredWidth: 2

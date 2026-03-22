@@ -3,15 +3,11 @@ import QtQuick.Layouts
 
 import qs.animations
 import qs.common
+import qs.icons
 import qs.services
 
 MouseArea {
     id: root
-
-    Layout.fillHeight: true
-
-    hoverEnabled: true
-    implicitWidth: height
 
     property color color: {
         if (AudioService.sinkMuted || AudioService.sinkVolume == 0) {
@@ -27,6 +23,21 @@ MouseArea {
         return Colors.foreground;
     }
 
+    Layout.fillHeight: true
+
+    acceptedButtons: Qt.RightButton
+    hoverEnabled: true
+    implicitWidth: height
+    onClicked: event => {
+        if (event.button == Qt.RightButton) {
+            AudioService.toggleSinkMute();
+        }
+    }
+    onWheel: event => {
+        var increment = event.angleDelta.y > 0.0;
+        AudioService.changeSinkVolume(increment);
+    }
+
     Rectangle {
         anchors.fill: parent
         color: Colors.backgroundVariant
@@ -35,24 +46,27 @@ MouseArea {
             AnimateNumber {}
         }
     }
-    RowLayout {
-        anchors {
-            fill: parent
-            margins: 6
+    VolumeIcon {
+        size: 20
+        anchors.centerIn: parent
+        color: root.color
+    }
+    VolumeOverlay1 {
+        size: 20
+        anchors.centerIn: parent
+        opacity: (AudioService.sinkVolume * 2) / 100
+        color: root.color
+        Behavior on opacity {
+            AnimateNumber {}
         }
-        spacing: 2
-        Rectangle {
-            Layout.fillWidth: true
-            Layout.preferredHeight: 16
-            radius: Constants.radius
-            color: root.color
-        }
-        Rectangle {
-            Layout.preferredWidth: 2
-            Layout.preferredHeight: 8
-            topRightRadius: Constants.radius
-            bottomRightRadius: Constants.radius
-            color: root.color
+    }
+    VolumeOverlay2 {
+        size: 20
+        anchors.centerIn: parent
+        opacity: (Math.max(AudioService.sinkVolume, 50) - 50) / 100 * 2
+        color: root.color
+        Behavior on opacity {
+            AnimateNumber {}
         }
     }
     Behavior on color {
