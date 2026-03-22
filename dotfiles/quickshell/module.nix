@@ -17,6 +17,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+
     homeDir.${username}.config.files = {
       "quickshell/default".source = ./src;
       "quickshell/colors.json" = {
