@@ -1,4 +1,4 @@
-args@{ username, ... }:
+args@{ pkgs, username, ... }:
 
 {
 
@@ -10,6 +10,15 @@ args@{ username, ... }:
     extraGroups = [ "wheel" ];
     isNormalUser = true;
     home = "/home/${username}";
+    shell = pkgs.zsh;
+  };
+
+  features.zsh = {
+    enable = true;
+    completion = true;
+    substringSearch = true;
+    suggestions = true;
+    syntaxHighlight = true;
   };
 
 }
