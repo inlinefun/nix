@@ -3,6 +3,9 @@
 {
 
   packages = {
+    hyprpaper = {
+      enable = true;
+    };
     kitty = {
       enable = true;
     };
