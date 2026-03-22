@@ -11,6 +11,9 @@
       inputs.nixpkgs.follows = "";
       inputs.hjem.follows = "";
     };
+    basix = {
+      url = "github:NotAShelf/Basix";
+    };
   };
   outputs =
     { nixpkgs, ... }@inputs:
@@ -18,6 +21,7 @@
       nixosConfigurations.x515 = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+          colors = inputs.basix.schemeData.base24."0x96f".palette;
         };
         modules = [
           inputs.hjem.nixosModules.default
