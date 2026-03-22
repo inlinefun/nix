@@ -28,7 +28,7 @@ in
           path = ${if cfg.useRandom then ./src else cfg.wallpaper}
           fit_mode = cover
           # random order is applied only when a directory is passed, not a path to an image
-          order = random
+          # order = random
         }
       '';
     };
