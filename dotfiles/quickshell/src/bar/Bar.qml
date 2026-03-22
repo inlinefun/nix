@@ -42,5 +42,7 @@ PanelWindow {
             bottom: parent.bottom
             rightMargin: Constants.screenRadius
         }
+        Volume {}
+        Battery {}
     }
 }
