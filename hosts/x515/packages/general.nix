@@ -16,5 +16,9 @@
     gnupg = {
       enable = true;
     };
+    inkscape = {
+      enable = true;
+      package = pkgs.inkscape;
+    };
   };
 }
