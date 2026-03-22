@@ -10,9 +10,6 @@ layout {
     border {
         on
         width 2
-        active-color "#0f62fe"
-        inactive-color "#161616"
-        urgent-color "#fa4d56"
     }
     focus-ring {
         off
