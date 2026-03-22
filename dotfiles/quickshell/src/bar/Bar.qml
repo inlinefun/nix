@@ -2,7 +2,6 @@ import Quickshell
 import QtQuick
 
 import qs.common
-import qs.generated
 
 //qmllint disable uncreatable-type
 PanelWindow {
@@ -12,6 +11,6 @@ PanelWindow {
         left: true
         right: true
     }
-    implicitHeight: 42
-    color: Colors.background
+    implicitHeight: Constants.barHeight
+    // color: Colors.background
 }

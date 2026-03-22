@@ -3,7 +3,6 @@ import QtQuick
 import QtQuick.Shapes
 
 import qs.common
-import qs.generated
 
 // qmllint disable uncreatable-type
 Scope {
