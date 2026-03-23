@@ -5,6 +5,7 @@ import qs.animations
 import qs.common
 import qs.icons
 import qs.services
+import qs.sidebar
 
 MouseArea {
     id: root
@@ -25,12 +26,12 @@ MouseArea {
 
     Layout.fillHeight: true
 
-    acceptedButtons: Qt.RightButton
+    acceptedButtons: Qt.LeftButton
     hoverEnabled: true
     implicitWidth: height
     onClicked: event => {
-        if (event.button == Qt.RightButton) {
-            AudioService.toggleSinkMute();
+        if (event.button == Qt.LeftButton) {
+            Persistence.toggleRightbar();
         }
     }
     onWheel: event => {
@@ -46,36 +47,32 @@ MouseArea {
             AnimateNumber {}
         }
     }
-    VolumeIcon {
+    ChatIcon {
         size: 20
         anchors.centerIn: parent
         color: root.color
-    }
-    VolumeOverlay1 {
-        size: 20
-        anchors.centerIn: parent
-        opacity: AudioService.sinkMuted ? 0 : (AudioService.sinkVolume * 2) / 100
-        color: root.color
-        Behavior on opacity {
-            AnimateNumber {}
-        }
-    }
-    VolumeOverlay2 {
-        size: 20
-        anchors.centerIn: parent
-        opacity: AudioService.sinkMuted ? 0 : (Math.max(AudioService.sinkVolume, 50) - 50) / 100 * 2
-        color: root.color
-        Behavior on opacity {
-            AnimateNumber {}
-        }
-    }
-    VolumeOverlayMute {
-        size: 20
-        anchors.centerIn: parent
-        opacity: AudioService.sinkMuted ? 1 : 0
-        color: root.color
-        Behavior on opacity {
-            AnimateNumber {}
+        Item {
+            anchors {
+                fill: parent
+            }
+            Rectangle {
+                anchors {
+                    top: parent.top
+                    left: parent.right
+                    leftMargin: 4
+                    topMargin: -1
+                }
+                implicitWidth: 12
+                implicitHeight: width
+                radius: width
+                border {
+                    width: 2
+                    color: root.containsMouse ? Colors.backgroundVariant : Colors.background
+                    Behavior on color {
+                        AnimateColor {}
+                    }
+                }
+            }
         }
     }
     Behavior on color {

@@ -1,59 +1,48 @@
-import Quickshell
 import QtQuick
+import QtQuick.Layouts
+import Quickshell
 
 import qs.common
-import qs.sidebar
 import qs.uncommon
 
 // qmllint disable uncreatable-type
 Scope {
     id: root
 
-    RightSidebar {}
     PanelWindow {
-        id: bottom
+        id: right
         anchors {
-            left: true
+            top: true
             right: true
             bottom: true
         }
-        implicitHeight: Constants.screenBorder
         color: Colors.background
+        implicitWidth: Constants.screenBorder
     }
     PanelWindow {
-        id: bottomLeftCorner
+        id: topRightCorner
         implicitHeight: Constants.screenRadius
         implicitWidth: Constants.screenRadius
         color: "transparent"
         anchors {
-            bottom: true
-            left: true
+            top: true
+            right: true
         }
-        BottomLeftCorner {
+        TopRightCorner {
             implicitHeight: Constants.screenRadius
             implicitWidth: Constants.screenRadius
         }
     }
     PanelWindow {
-        id: left
-        anchors {
-            top: true
-            left: true
-            bottom: true
-        }
-        implicitWidth: Constants.screenBorder
-        color: Colors.background
-    }
-    PanelWindow {
-        id: topLeftCorner
+        id: bottomRightCorner
         implicitHeight: Constants.screenRadius
         implicitWidth: Constants.screenRadius
         color: "transparent"
         anchors {
-            top: true
-            left: true
+            bottom: true
+            right: true
         }
-        TopLeftCorner {
+        BottomRightCorner {
             implicitHeight: Constants.screenRadius
             implicitWidth: Constants.screenRadius
         }
