@@ -14,6 +14,8 @@ MouseArea {
 
     Layout.fillHeight: true
     hoverEnabled: true
+    onEntered: HoverState.updateHover(HoverStates.RightBar)
+    onExited: HoverState.updateHover(HoverStates.None)
     implicitWidth: height
 
     Rectangle {

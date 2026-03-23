@@ -2,26 +2,14 @@ import Quickshell
 import QtQuick
 
 import qs.common
+import qs.panel
 import qs.uncommon
 
 // qmllint disable uncreatable-type
 Scope {
     id: root
 
-    PanelWindow {
-        id: topRightCorner
-        implicitHeight: Constants.screenRadius
-        implicitWidth: Constants.screenRadius
-        color: "transparent"
-        anchors {
-            top: true
-            right: true
-        }
-        TopRightCorner {
-            implicitHeight: Constants.screenRadius
-            implicitWidth: Constants.screenRadius
-        }
-    }
+    RightPanel {}
     PanelWindow {
         id: right
         anchors {
