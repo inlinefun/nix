@@ -4,40 +4,17 @@ import QtQuick.Layouts
 import qs.animations
 import qs.common
 import qs.icons
-import qs.services
-import qs.sidebar
 
 MouseArea {
     id: root
 
     property color color: {
-        if (AudioService.sinkMuted || AudioService.sinkVolume == 0) {
-            return Colors.red;
-        }
-        if (AudioService.sinkVolume == 100) {
-            return Colors.cyan;
-        } else if (AudioService.sinkVolume <= 10) {
-            return Colors.orange;
-        } else if (AudioService.sinkVolume <= 20) {
-            return Colors.yellow;
-        }
         return Colors.foreground;
     }
 
     Layout.fillHeight: true
-
-    acceptedButtons: Qt.LeftButton
     hoverEnabled: true
     implicitWidth: height
-    onClicked: event => {
-        if (event.button == Qt.LeftButton) {
-            Persistence.toggleRightbar();
-        }
-    }
-    onWheel: event => {
-        var increment = event.angleDelta.y > 0.0;
-        AudioService.changeSinkVolume(increment);
-    }
 
     Rectangle {
         anchors.fill: parent
