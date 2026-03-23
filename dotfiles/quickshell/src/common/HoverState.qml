@@ -11,7 +11,6 @@ Singleton {
     function updateHover(state: int) {
         p.tempHoverState = state;
         timer.restart();
-        console.log(state);
     }
 
     Timer {

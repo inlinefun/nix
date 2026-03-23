@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import Quickshell.Widgets
 
 import qs.animations
 import qs.common
@@ -8,8 +9,8 @@ import qs.uncommon
 // qmllint disable uncreatable-type
 PanelWindow {
     id: root
-    readonly property int targetHeight: 300
-    readonly property int targetWidth: 300
+    readonly property int targetHeight: 400
+    readonly property int targetWidth: 400
     readonly property bool show: HoverState.hoverState === HoverStates.RightBar || HoverState.hoverState === HoverStates.RightPanel
     implicitHeight: (root.show || container.implicitHeight > 0 ? root.targetHeight : 0) + Constants.screenRadius
     implicitWidth: (root.show || container.implicitHeight > 0 ? root.targetWidth : 0) + Constants.screenRadius
@@ -41,7 +42,7 @@ PanelWindow {
         Behavior on implicitHeight {
             AnimateNumber {}
         }
-        Rectangle {
+        ClippingRectangle {
             id: panel
             anchors {
                 top: parent.top
@@ -51,6 +52,7 @@ PanelWindow {
             implicitHeight: container.height - Constants.screenRadius
             bottomLeftRadius: Constants.screenRadius
             color: Colors.background
+            RightPanelContent {}
         }
         TopRightCorner {
             anchors {
