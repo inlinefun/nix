@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -10,13 +11,11 @@ in
 {
 
   options.packages.adb = {
-    enable = lib.mkEnableoption "Whether to enable Android Debugging Bridge";
+    enable = lib.mkEnableOption "Whether to enable Android Debugging Bridge";
   };
 
   config = lib.mkIf cfg.enable {
-    programs.adb = {
-      enable = true;
-    };
+    environment.systemPackages = with pkgs; [ android-tools ];
   };
 
 }
