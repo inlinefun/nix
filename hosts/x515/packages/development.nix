@@ -2,6 +2,9 @@
 
 {
   packages = {
+    adb = {
+      enable = true;
+    };
     git = {
       enable = true;
       enableLFS = true;
