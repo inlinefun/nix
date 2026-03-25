@@ -7,7 +7,11 @@ args@{ pkgs, username, ... }:
   ];
 
   users.users.${username} = {
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "adbusers"
+      "input"
+    ];
     isNormalUser = true;
     home = "/home/${username}";
     shell = pkgs.zsh;
