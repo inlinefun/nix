@@ -14,6 +14,10 @@
     basix = {
       url = "github:NotAShelf/Basix";
     };
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     { nixpkgs, ... }@inputs:
