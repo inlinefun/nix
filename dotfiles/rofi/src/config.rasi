@@ -1,0 +1,57 @@
+@import "colors"
+
+configuration {
+    modes: "drun";
+    font: "IBM Plex Sans 14";
+}
+
+window {
+    border: 2px;
+    width: 512px;
+    border-radius: 2px;
+    border-color: @primary;
+    background-color: @background;
+}
+
+entry {
+    placeholder: "...";
+}
+
+scrollbar {
+    background-color: @primary;
+}
+
+element {
+    spacing: 5px;
+    padding: 5px;
+    children: [ element-icon, element-text ];
+}
+
+element normal.normal {
+    text-color: @foreground;
+    background-color: @background;
+}
+element alternate.normal {
+    text-color: @foreground;
+    background-color: @background;
+}
+element selected.normal {
+    background-color: @background-variant;
+    text-color: @primary;
+}
+
+scrollbar {
+    background-color: @background-variant;
+}
+scrollbar normal {
+    background-color: @background-variant;
+}
+
+inputbar, prompt, entry, num-rows, num-filtered-rows, case-indicator {
+    text-color: @foreground;
+}
+
+listview {
+    lines: 10;
+    scrollbar: false;
+}
