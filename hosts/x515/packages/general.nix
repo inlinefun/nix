@@ -6,12 +6,15 @@
 {
 
   packages = {
-    firefox = {
-      enable = true;
-    };
     discord = {
       enable = true;
       package = pkgs.vesktop;
+    };
+    firefox = {
+      enable = true;
+    };
+    quickshell = {
+      enable = true;
     };
   };
 
