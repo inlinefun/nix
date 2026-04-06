@@ -22,7 +22,10 @@ local toggle_ninbot = function()
     if is_ninbot_running() then
         helpers.toggle_floating()
     else
-        waywall.exec("java -Dawt.useSystemAAFontSettings=on -jar " .. ninjabrain_bot_path)
+        waywall.exec(
+            "java -Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar "
+            .. ninjabrain_bot_path
+        )
         waywall.show_floating(true)
         print("started ninbot")
     end
