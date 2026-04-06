@@ -12,6 +12,10 @@
       jack = true;
       pulseAudio = true;
     };
+    bluetooth = {
+      enable = true;
+      enableOnBoot = false;
+    };
     compat = {
       enable = true;
       appImage = true;
