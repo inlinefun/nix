@@ -19,6 +19,8 @@ let
           libxtst
           libxkbcommon
           libxinerama
+          libxcb
+          libGLX
         ]
       );
   };
