@@ -15,6 +15,7 @@
     bluetooth = {
       enable = true;
       enableOnBoot = false;
+      enableServices = true;
     };
     compat = {
       enable = true;

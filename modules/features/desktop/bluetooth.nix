@@ -16,13 +16,25 @@ in
     enableOnBoot = lib.mkEnableOption ''
       Whether to enable Bluetooth on boot
     '';
+    enableServices =
+      lib.mkEnableOption ''
+        Whether to enable `blueman` services for handling
+      ''
+      // {
+        default = true;
+      };
   };
 
-  config = lib.mkIf cfg.enable {
-    hardware.bluetooth = {
-      enable = true;
-      powerOnBoot = cfg.enableOnBoot;
-    };
-  };
+  config = lib.mkIf cfg.enable lib.mkMerge [
+    {
+      hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = cfg.enableOnBoot;
+      };
+    }
+    (lib.mkIf cfg.enableServices {
+      services.blueman.enable = true;
+    })
+  ];
 
 }
