@@ -2,12 +2,17 @@
   colors,
   config,
   lib,
+  pkgs,
   username,
   ...
 }:
 
 let
   cfg = config.dotfiles.waywall;
+  ninjabrain_bot = pkgs.fetchurl {
+    url = "https://github.com/Ninjabrain1/Ninjabrain-Bot/releases/download/1.5.2/Ninjabrain-Bot-1.5.2.jar";
+    hash = "sha256-mAmfYyGpDUrOwTQA6G0F96+NYOVjnC84Qn6WjccUUP8=";
+  };
 in
 {
 
@@ -20,7 +25,8 @@ in
   config = lib.mkIf cfg.enable {
 
     homeDir.${username}.config.files = {
-      "waywall/assets".source = ./src/assets;
+      "waywall/assets/eye_measure_overlay.png".source = ./src/assets/eye_measure_overlay.png;
+      "waywall/assets/ninjabrain_bot.jar".source = ninjabrain_bot;
       "waywall/actions.lua".source = ./src/actions.lua;
       "waywall/appearance.lua".source = ./src/appearance.lua;
       "waywall/config.lua".source = ./src/config.lua;
