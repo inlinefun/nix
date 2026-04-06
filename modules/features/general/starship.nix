@@ -57,13 +57,6 @@ in
           style = "bold fg:background bg:blue";
           format = "[[($all_status$ahead_behind )](bold fg:background bg:blue)]($style)";
         };
-        nix_shell = {
-          symbol = "󱄅 ";
-          style = "bold fg:background bg:blue";
-          unknown_msg = "unknown";
-          format = "[$symbol$state( \($name\))]($style)";
-          heuristic = false;
-        };
         cmd_duration = {
           min_time = 2000;
           show_milliseconds = false;
