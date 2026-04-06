@@ -25,16 +25,18 @@ in
       };
   };
 
-  config = lib.mkIf cfg.enable lib.mkMerge [
-    {
-      hardware.bluetooth = {
-        enable = true;
-        powerOnBoot = cfg.enableOnBoot;
-      };
-    }
-    (lib.mkIf cfg.enableServices {
-      services.blueman.enable = true;
-    })
-  ];
+  config = lib.mkIf cfg.enable (
+    lib.mkMerge [
+      {
+        hardware.bluetooth = {
+          enable = true;
+          powerOnBoot = cfg.enableOnBoot;
+        };
+      }
+      (lib.mkIf cfg.enableServices {
+        services.blueman.enable = true;
+      })
+    ]
+  );
 
 }
