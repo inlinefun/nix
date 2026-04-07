@@ -20,6 +20,9 @@
       enable = true;
       package = pkgs.osu-lazer-bin;
     };
+    playit = {
+      enable = true;
+    };
     waywall = {
       enable = true;
       package = pkgs.waywall;
