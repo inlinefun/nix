@@ -19,6 +19,7 @@ in
     '';
     wayland = lib.mkEnableOption ''
       Whether to ask the SDL backend to use wayland
+      only works if package is default, else override the package
     '';
     package = lib.mkOption {
       default = package;

@@ -18,7 +18,9 @@
     };
     osu = {
       enable = true;
-      package = pkgs.osu-lazer-bin;
+      package = pkgs.osu-lazer-bin.override {
+        nativeWayland = true;
+      };
     };
     playit = {
       enable = true;
