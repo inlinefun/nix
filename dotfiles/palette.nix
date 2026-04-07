@@ -10,7 +10,7 @@
   config = {
     homeDir.${username}.files = {
       ".scheme.json" = {
-        generator = lib.generators.toPretty { };
+        generator = lib.generators.toJSON { };
         value = {
           base00 = colors.base00;
           base01 = colors.base01;
@@ -39,7 +39,7 @@
         };
       };
       ".colors.json" = {
-        generator = lib.generators.toPretty { };
+        generator = lib.generators.toJSON { };
         value = {
           background = colors.base00;
           background_variant = colors.base01;
