@@ -1,0 +1,11 @@
+[
+  {
+    "label": "Build NixOS configuration for host x515",
+    "command": "nixos-rebuild",
+    "args": ["build", "--flake", ".#x515"],
+    "show_command": false,
+    "allow_concurrent_runs": false,
+    "hide": "on_success",
+    "reveal": "no_focus",
+  },
+]
