@@ -18,6 +18,9 @@ in
       // {
         default = true;
       };
+    connectivityChecking = lib.mkEnableOption ''
+      Whether to configure `networkmanager` to check connectivity status
+    '';
     plugins = lib.mkOption {
       default = with pkgs; [
         networkmanager-openvpn
@@ -29,11 +32,19 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable {
-    networking.networkmanager = {
-      enable = true;
-      plugins = cfg.plugins;
-    };
-  };
+  config = lib.mkIf cfg.enable (
+    lib.mkMerge [
+      {
+        networking.networkmanager = {
+          enable = true;
+          plugins = cfg.plugins;
+        };
+      }
+      (lib.mkIf cfg.connectivityChecking {
+        networking.networkmanager.settings.connectivity.uri =
+          "http://nmcheck.gnome.org/check_network_status.txt";
+      })
+    ]
+  );
 
 }

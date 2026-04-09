@@ -40,6 +40,7 @@
     gpg.enable = true;
     networkManager = {
       enable = true;
+      connectivityChecking = true;
       plugins = with pkgs; [
         networkmanager-openvpn
       ];
