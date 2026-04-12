@@ -14,9 +14,6 @@ PanelWindow {
     // qmllint enable
     property list<string> items: []
     property int windowHeight: 0
-    onWindowHeightChanged: {
-        console.log(windowHeight);
-    }
     // qmllint disable unresolved-type unqualified missing-property
     margins.bottom: Constants.borderSize
     // qmllint enable
@@ -108,7 +105,6 @@ PanelWindow {
                     } else if (root.windowHeight <= list.contentHeight) {
                         root.windowHeight = list.contentHeight;
                     }
-                    console.log(running);
                 }
             }
         }
@@ -191,7 +187,7 @@ PanelWindow {
             root.items.push("volume");
         } else {
             // qmllint disable missing-property
-            list.itemAtIndex(index).item.reset();
+            list.itemAtIndex(index)?.item?.reset();
             // qmllint enable
         }
     }
