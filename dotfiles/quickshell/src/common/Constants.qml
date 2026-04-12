@@ -11,6 +11,4 @@ Singleton {
     readonly property int borderSize: 4
     readonly property int radius: 4
     readonly property int marginS: 4
-    readonly property int osdWidth: 240
-    readonly property int osdHeight: 60
 }
