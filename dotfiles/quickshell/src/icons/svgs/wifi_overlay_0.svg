@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="24px"
+   viewBox="0 -960 960 960"
+   width="24px"
+   fill="#e3e3e3"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="wifi_overlay_0.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="32.708333"
+     inkscape:cx="11.95414"
+     inkscape:cy="12.458599"
+     inkscape:window-width="1898"
+     inkscape:window-height="982"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <path
+     d="m 622.5,-536 c 45,16 85.83333,38 122.5,66 13.33333,10 20.16667,23.16667 20.5,39.5 0.33333,16.33333 -5.5,30.5 -17.5,42.5 -11.33333,11.33333 -25.33333,17.16667 -42,17.5 -16.66667,0.33333 -31.66667,-4.16667 -45,-13.5 -25.33333,-17.33333 -53.33333,-31 -84,-41 -30.66667,-10 -63,-15 -97,-15 -34,0 -66.33333,5 -97,15 -30.66667,10 -58.66667,23.66667 -84,41 -13.33333,9.33333 -28.33333,13.66667 -45,13 -16.66667,-0.66667 -30.66667,-6.66667 -42,-18 -11.33333,-12 -17,-26.16667 -17,-42.5 0,-16.33333 6.66667,-29.5 20,-39.5 36.66667,-28 77.5,-49.83333 122.5,-65.5 45,-15.66667 92.5,-23.5 142.5,-23.5 50,0 97.5,8 142.5,24 z"
+     id="path1"
+     sodipodi:nodetypes="scssscssscscscsss" />
+</svg>

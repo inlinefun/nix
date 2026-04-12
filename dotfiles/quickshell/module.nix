@@ -27,7 +27,7 @@ in
 
   config = lib.mkIf cfg.enable {
     homeDir.${username}.config.files = {
-
+      "quickshell/default".source = ./src;
     };
     packages.quickshell.enable = true;
     userPackages.${username}.install =
