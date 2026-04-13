@@ -7,6 +7,10 @@
 
   packages = {
     adb.enable = true;
+    androidStudio = {
+      enable = true;
+      package = pkgs.androidStudioPackages.stable;
+    };
     git = {
       enable = true;
       enableLFS = true;

@@ -34,6 +34,7 @@
       experimentalFeatures = [ ];
       allowedUnfree = [
         "osu-lazer-bin"
+        "android-studio"
       ];
     };
   };
