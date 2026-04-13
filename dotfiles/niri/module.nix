@@ -34,6 +34,7 @@ in
             }
         }
         spawn-at-startup "systemctl" "--user" "start" "hyprpaper.service"
+        spawn-at-startup "quickshell" "--no-duplicate" "--daemonize" "--config" "default"
       '';
     };
 
@@ -41,6 +42,7 @@ in
       kitty.enable = true;
       hyprlock.enable = true;
       hyprpaper.enable = true;
+      quickshell.enable = true;
       rofi.enable = true;
     };
 
