@@ -53,47 +53,62 @@ PanelWindow {
             }
             delegate: Loader {
                 id: loader
+                clip: true
                 required property var modelData
                 sourceComponent: {
                     if (modelData === "volume") {
                         return volume;
+                    } else if (modelData === "bluetooth") {
+                        return bluetooth;
+                    } else if (modelData === "battery") {
+                        return battery;
                     }
                     return null;
                 }
                 onLoaded: {
                     // qmllint disable missing-property
                     item.onCloseRequest.connect(() => {
-                        root.items.pop(modelData);
+                        let index = root.items.indexOf(modelData);
+                        root.items.splice(index, 1);
                     });
                     // qmllint enable
                 }
             }
             spacing: 5
             add: Transition {
-                AnimateNumber {
-                    property: "opacity"
-                    from: 0
-                    to: 1
-                }
-                AnimateNumber {
-                    property: "y"
-                    from: 0
+                ParallelAnimation {
+                    AnimateNumber {
+                        property: "opacity"
+                        from: 0
+                        to: 1
+                    }
+                    AnimateNumber {
+                        property: "y"
+                        from: 0
+                    }
                 }
             }
             displaced: Transition {
-                AnimateNumber {
-                    property: "y"
+                ParallelAnimation {
+                    AnimateNumber {
+                        property: "y"
+                    }
+                    AnimateNumber {
+                        property: "opacity"
+                    }
                 }
             }
             remove: Transition {
-                AnimateNumber {
-                    property: "y"
-                    to: 0
-                }
-                AnimateNumber {
-                    property: "opacity"
-                    from: 1
-                    to: 0
+                ParallelAnimation {
+                    AnimateNumber {
+                        property: "y"
+                        to: 0
+                    }
+                    AnimateNumber {
+                        property: "opacity"
+                        from: 1
+                        to: 0
+                    }
                 }
             }
         }
@@ -181,10 +196,18 @@ PanelWindow {
         id: volume
         VolumeOSD {}
     }
+    Component {
+        id: bluetooth
+        BluetoothOSD {}
+    }
+    Component {
+        id: battery
+        BatteryOSD {}
+    }
     function updateOSD(id) {
         let index = root.items.findIndex(it => it === id);
         if (index === -1) {
-            root.items.push("volume");
+            root.items.push(id);
         } else {
             // qmllint disable missing-property
             list.itemAtIndex(index)?.item?.reset();
@@ -194,6 +217,12 @@ PanelWindow {
     Component.onCompleted: {
         PipewireService.onSinkUpdate.connect(() => {
             updateOSD("volume");
+        });
+        BluetoothService.onUpdate.connect(() => {
+            updateOSD("bluetooth");
+        });
+        PowerService.onUpdate.connect(() => {
+            updateOSD("battery");
         });
     }
 }
