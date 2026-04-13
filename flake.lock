@@ -7,11 +7,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1772857566,
-        "narHash": "sha256-tHRY6XYPilIsFLq9hdoV2MPPar0WFovjrgRngTYLRgI=",
+        "lastModified": 1775883659,
+        "narHash": "sha256-ohbK0Z5YiDKWnnV2Ex90TBToGnbBUGbdDa0zmTyUM6g=",
         "owner": "NotAShelf",
         "repo": "Basix",
-        "rev": "005fac7b1aed5e92a7255150dc2848ecb1284fe7",
+        "rev": "b38cc3e01defeba7a50c7bd7aabea8762050c782",
         "type": "github"
       },
       "original": {
