@@ -9,7 +9,7 @@ MouseArea {
     id: root
 
     Layout.fillHeight: true
-    Layout.preferredWidth: 200
+    Layout.preferredWidth: container.width
     Layout.margins: Constants.marginS
     acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
     onClicked: event => {
@@ -40,6 +40,7 @@ MouseArea {
             }
             spacing: 0
             Item {
+                id: icon
                 Layout.alignment: Qt.AlignVCenter
                 Layout.fillHeight: true
                 Layout.preferredWidth: height
@@ -75,7 +76,9 @@ MouseArea {
             CText {
                 Layout.margins: Constants.marginS
                 Layout.alignment: Qt.AlignVCenter
+                Layout.preferredWidth: 150
                 text: MediaService.track
+                elide: Text.ElideRight
             }
         }
         MediaProgress {
