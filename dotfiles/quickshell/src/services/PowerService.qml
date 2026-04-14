@@ -17,6 +17,10 @@ Singleton {
     signal onUpdate
 
     onStateChanged: {
+        // i hate this moving all around between Discharging to Fully Charged every minute or so
+        if (battery === 100) {
+            return;
+        }
         root.onUpdate();
     }
     onBatteryChanged: {
