@@ -50,6 +50,9 @@
       useNautilus = true;
       xwayland = true;
     };
+    rust = {
+      enable = true;
+    };
   };
 
 }
