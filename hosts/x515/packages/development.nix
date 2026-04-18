@@ -7,13 +7,6 @@
 
   packages = {
     adb.enable = true;
-    androidStudio = {
-      enable = true;
-      package = pkgs.android-studio.override {
-        forceWayland = true;
-        tiling_wm = true;
-      };
-    };
     git = {
       enable = true;
       enableLFS = true;
