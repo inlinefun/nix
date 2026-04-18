@@ -27,6 +27,9 @@
       enable = true;
       manager = "gdm";
     };
+    distrobox = {
+      enable = true;
+    };
     firewall = {
       enable = true;
     };
