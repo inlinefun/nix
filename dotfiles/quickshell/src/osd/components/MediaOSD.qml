@@ -11,6 +11,7 @@ import qs.services
 OSDItem {
     id: root
 
+    property int tempIndex: 0
     property double progress: MediaService.progress * 100.0
     property color color: Colors.foreground
 
@@ -31,6 +32,22 @@ OSDItem {
                 source: MediaService.url
                 mipmap: true
                 asynchronous: true
+                onStatusChanged: {
+                    let url = source.toString();
+                    if (status === Image.Ready) {
+                        if (url.startsWith("http://") || url.startsWith("https://")) {
+                            image.grabToImage(result => {
+                                let dir = Quickshell.cacheDir;
+                                let path = dir + (dir.endsWith("/") ? "" : "/") + "qs_osd_media_art" + root.tempIndex + ".png";
+                                result.saveToFile(path);
+                                root.tempIndex = root.tempIndex > 0 ? 0 : 1;
+                                quantizer.source = Qt.resolvedUrl(path);
+                            });
+                        } else {
+                            quantizer.source = Qt.url(source);
+                        }
+                    }
+                }
             }
             Behavior on Layout.margins {
                 AnimateNumber {}
@@ -80,7 +97,6 @@ OSDItem {
                     Layout.rightMargin: 0
                     ColorQuantizer {
                         id: quantizer
-                        source: MediaService.url
                         depth: 4
                         rescaleSize: 64
                     }
