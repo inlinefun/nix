@@ -15,6 +15,7 @@ args@{
       "wheel"
       "adbusers"
       "input"
+      "networkmanager"
     ];
     isNormalUser = true;
     home = "/home/${username}";
