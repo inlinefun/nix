@@ -76,9 +76,6 @@ OSDItem {
                         source: Qt.url(MediaService.url)
                         depth: 4
                         rescaleSize: 64
-                        onColorsChanged: {
-                            console.log(colors);
-                        }
                     }
                     RowLayout {
                         anchors {
