@@ -1,9 +1,11 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
 import Quickshell.Widgets
 
 import qs.common
-import qs.icons
 import qs.services
 
 OSDItem {
@@ -18,11 +20,17 @@ OSDItem {
             fill: parent
         }
         IconImage {
-            Layout.fillHeight: true
-            Layout.preferredWidth: height
-            Layout.margins: Constants.marginS
+            Layout.fillHeight: status === Image.Ready
+            Layout.preferredWidth: status === Image.Ready ? height : 0
+            Layout.margins: status === Image.Ready ? Constants.marginS : 0
             source: MediaService.url
             mipmap: true
+            Behavior on Layout.margins {
+                AnimateNumber {}
+            }
+            Behavior on Layout.preferredWidth {
+                AnimateNumber {}
+            }
         }
         ColumnLayout {
             Layout.fillWidth: true
@@ -38,49 +46,75 @@ OSDItem {
                     spacing: 0
                     CText {
                         Layout.fillWidth: true
+                        Layout.preferredWidth: contentWidth
                         text: MediaService.track
                         size: 16
                         color: Colors.foreground
+                        elide: Text.ElideRight
                     }
                     CText {
                         Layout.fillWidth: true
+                        Layout.preferredWidth: contentWidth
                         text: MediaService.artist
                         size: 12
                         color: Colors.foreground_variant
+                        elide: Text.ElideRight
                     }
                 }
                 Item {
                     id: icon
+
+                    property color color: quantizer.colors[14] ?? Colors.blue
+
                     Layout.alignment: Qt.AlignVCenter
                     Layout.fillHeight: true
                     Layout.preferredWidth: height
                     Layout.margins: Constants.marginS
                     Layout.rightMargin: 0
-                    MediaCircleIcon {
-                        anchors {
-                            centerIn: parent
-                        }
-                        size: 22
-                    }
-                    MediaPlayIcon {
-                        anchors {
-                            centerIn: parent
-                        }
-                        size: 22
-                        opacity: MediaService.playing ? 0 : 1
-                        Behavior on opacity {
-                            AnimateNumber {}
+                    ColorQuantizer {
+                        id: quantizer
+                        source: Qt.url(MediaService.url)
+                        depth: 4
+                        rescaleSize: 64
+                        onColorsChanged: {
+                            console.log(colors);
                         }
                     }
-                    MediaPauseIcon {
+                    RowLayout {
                         anchors {
                             centerIn: parent
                         }
-                        size: 22
-                        opacity: MediaService.playing ? 1 : 0
-                        Behavior on opacity {
-                            AnimateNumber {}
+                        spacing: 3
+                        Repeater {
+                            model: 4
+                            delegate: Rectangle {
+                                id: rect
+                                required property int index
+                                readonly property int minHeight: 8
+                                readonly property int maxHeight: 16
+                                Layout.preferredWidth: 2
+                                radius: 2
+                                color: icon.color
+                                SequentialAnimation on Layout.preferredHeight {
+                                    running: MediaService.playing
+                                    loops: Animation.Infinite
+                                    PauseAnimation {
+                                        duration: rect.index * 100
+                                    }
+                                    NumberAnimation {
+                                        from: rect.maxHeight
+                                        to: rect.minHeight
+                                    }
+                                    NumberAnimation {
+                                        from: rect.minHeight
+                                        to: rect.maxHeight
+                                    }
+                                }
+                            }
                         }
+                    }
+                    Behavior on color {
+                        AnimateColor {}
                     }
                 }
             }

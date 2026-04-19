@@ -231,7 +231,12 @@ PanelWindow {
             updateOSD("battery");
         });
         MediaService.onUpdate.connect(() => {
-            updateOSD("media");
+            if (MediaService.player !== null && MediaService !== undefined) {
+                updateOSD("media");
+            } else {
+                let index = root.items.indexOf("media");
+                root.items.splice(index, 1);
+            }
         });
     }
 }
