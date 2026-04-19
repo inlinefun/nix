@@ -26,6 +26,18 @@ Singleton {
             sinkAudio.muted = !sinkMuted;
         }
     }
+    function incrementSinkVolume(volume: int) {
+        let value = sinkVolume + volume;
+        if (value > 100) {
+            value = 100;
+        } else if (value < 0) {
+            value = 0;
+        }
+        if (sinkVolume == value) {
+            onSinkUpdate();
+        }
+        sinkAudio.volume = value / 100.0;
+    }
 
     onSinkVolumeChanged: {
         root.onSinkUpdate();

@@ -9,7 +9,7 @@ MouseArea {
     id: root
 
     property color color: {
-        if (NetworkService.limitedConnectivity) {
+        if (NetworkService.limitedConnectivity && NetworkService.connected) {
             return Colors.orange;
         } else if (NetworkService.connected) {
             return Colors.cyan;

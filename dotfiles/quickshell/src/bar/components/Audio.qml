@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Layouts
 
 import qs.common
@@ -26,6 +25,14 @@ MouseArea {
     Layout.preferredWidth: height
     hoverEnabled: true
     acceptedButtons: Qt.RightButton
+    onWheel: event => {
+        let change = event.angleDelta.y;
+        let increment = 5;
+        if (change < 0) {
+            increment *= -1;
+        }
+        PipewireService.incrementSinkVolume(increment);
+    }
     onClicked: event => {
         event.accepted = true;
         if (event.button == Qt.RightButton) {

@@ -62,6 +62,8 @@ PanelWindow {
                         return bluetooth;
                     } else if (modelData === "battery") {
                         return battery;
+                    } else if (modelData === "media") {
+                        return media;
                     }
                     return null;
                 }
@@ -204,6 +206,10 @@ PanelWindow {
         id: battery
         BatteryOSD {}
     }
+    Component {
+        id: media
+        MediaOSD {}
+    }
     function updateOSD(id) {
         let index = root.items.findIndex(it => it === id);
         if (index === -1) {
@@ -223,6 +229,9 @@ PanelWindow {
         });
         PowerService.onUpdate.connect(() => {
             updateOSD("battery");
+        });
+        MediaService.onUpdate.connect(() => {
+            updateOSD("media");
         });
     }
 }
