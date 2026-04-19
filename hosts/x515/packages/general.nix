@@ -28,6 +28,9 @@
         pkgs.kdePackages.qtquicktimeline
       ];
     };
+    spotify = {
+      enable = true;
+    };
   };
 
 }

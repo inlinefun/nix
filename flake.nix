@@ -18,12 +18,17 @@
       url = "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
       nixpkgs,
       hjem,
       basix,
+      nur,
       ...
     }@inputs:
 
@@ -35,6 +40,7 @@
         };
         modules = [
           hjem.nixosModules.default
+          nur.modules.nixos.default
           ./modules
           ./hosts/x515
           ./users/me
