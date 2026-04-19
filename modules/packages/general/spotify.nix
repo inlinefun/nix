@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -7,6 +8,7 @@
 
 let
   cfg = config.packages.spotify;
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in
 {
 
@@ -17,9 +19,15 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      nur.repos.nltch.spotify-adblock
-    ];
+    programs.spicetify = {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        adblockify
+        aiBandBlocker
+        hidePodcasts
+        shuffle
+      ];
+    };
     settings.nix.allowedUnfree = [
       "spotify"
     ];

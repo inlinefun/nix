@@ -18,8 +18,8 @@
       url = "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = {
-      url = "github:nix-community/NUR";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -28,7 +28,7 @@
       nixpkgs,
       hjem,
       basix,
-      nur,
+      spicetify-nix,
       ...
     }@inputs:
 
@@ -40,7 +40,7 @@
         };
         modules = [
           hjem.nixosModules.default
-          nur.modules.nixos.default
+          spicetify-nix.nixosModules.spicetify
           ./modules
           ./hosts/x515
           ./users/me
