@@ -19,12 +19,19 @@ OSDItem {
         anchors {
             fill: parent
         }
-        IconImage {
-            Layout.fillHeight: status === Image.Ready
-            Layout.preferredWidth: status === Image.Ready ? height : 0
-            Layout.margins: status === Image.Ready ? Constants.marginS : 0
-            source: MediaService.url
-            mipmap: true
+        Item {
+            Layout.fillHeight: true
+            Layout.preferredWidth: image.status === Image.Ready ? height : 0
+            IconImage {
+                id: image
+                anchors {
+                    centerIn: parent
+                }
+                implicitSize: parent.height - (Constants.marginS * 2)
+                source: MediaService.url
+                mipmap: true
+                asynchronous: true
+            }
             Behavior on Layout.margins {
                 AnimateNumber {}
             }
@@ -73,7 +80,7 @@ OSDItem {
                     Layout.rightMargin: 0
                     ColorQuantizer {
                         id: quantizer
-                        source: Qt.url(MediaService.url)
+                        source: MediaService.url
                         depth: 4
                         rescaleSize: 64
                     }
