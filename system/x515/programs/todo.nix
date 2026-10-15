@@ -1,0 +1,11 @@
+{
+  ...
+}:
+
+{
+
+  programs = {
+    firefox.enable = true;
+  };
+
+}
