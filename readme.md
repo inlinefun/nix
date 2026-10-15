@@ -15,4 +15,5 @@ Lots of work to be done.
 - [ ] Make modules for some of the complex options / configurations
 - [ ] Make use of hjem for dotfiles
 - [ ] Make modules for most of the options / configurations
-- [ ] Make moduels for all of the options / configurations
+- [ ] Make modules for all of the options / configurations
+- [x] Have a 100% Nix only config :3
