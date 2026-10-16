@@ -9,6 +9,9 @@
     vim
     wget
     zed-editor
+    jetbrains-toolbox
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
 }
