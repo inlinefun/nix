@@ -10,6 +10,12 @@
     wget
     zed-editor
     jetbrains-toolbox
+
+    # CLI stuff
+    fastfetch
+    ripgrep
+    less
+    bat
   ];
 
   nixpkgs.config.allowUnfree = true;
