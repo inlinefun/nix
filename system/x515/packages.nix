@@ -11,6 +11,9 @@
     zed-editor
     jetbrains-toolbox
 
+    steam
+    steam-run
+
     # CLI stuff
     fastfetch
     ripgrep
