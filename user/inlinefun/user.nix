@@ -1,12 +1,14 @@
 {
   pkgs,
+  username,
   ...
 }:
 
 {
 
-  users.users."inlinefun" = {
+  users.users.${username} = {
     isNormalUser = true;
+    home = "/home/${username}";
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
