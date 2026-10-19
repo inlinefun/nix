@@ -6,11 +6,16 @@
       url = "github:NotAShelf/basix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{
       nixpkgs,
       basix,
+      hjem,
       ...
     }:
     {
@@ -26,6 +31,8 @@
               palette = basix.schemeData.base24."${scheme}".palette;
             };
           modules = [
+            hjem.nixosModules.default
+
             ./modules
             ./system/x515
             ./user/inlinefun
