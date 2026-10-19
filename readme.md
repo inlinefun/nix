@@ -12,12 +12,12 @@ Lots of work to be done.
 
 ### TODO:
 
-- [ ] Have a completely functional system for all of my needs
+- [x] Have a completely functional system for all of my needs
+- [x] Make use of hjem for dotfiles
 - [ ] Make modules for some of the complex options / configurations
-- [ ] Make use of hjem for dotfiles
 - [ ] Make modules for most of the options / configurations
 - [ ] Make modules for all of the options / configurations
-- [x] Have a 100% Nix only config :3
+- [ ] ~~Have a 100% Nix only config :3~~ (nevermind)
 
 ### Extra notes:
 
