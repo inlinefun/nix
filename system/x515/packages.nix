@@ -19,6 +19,8 @@
     ripgrep
     less
     bat
+
+    android-tools
   ];
 
   nixpkgs.config.allowUnfree = true;
