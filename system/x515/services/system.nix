@@ -1,5 +1,4 @@
 {
-  pkgs,
   ...
 }:
 
@@ -13,11 +12,6 @@
       alsa.enable = true;
       jack.enable = true;
       pulse.enable = true;
-    };
-    udev = {
-      packages = with pkgs; [
-        android-udev-rules
-      ];
     };
   };
 
