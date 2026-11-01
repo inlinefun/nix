@@ -14,6 +14,8 @@
     steam
     steam-run
 
+    vesktop
+
     # CLI stuff
     fastfetch
     ripgrep
