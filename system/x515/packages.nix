@@ -16,6 +16,8 @@
 
     vesktop
 
+    osu-lazer-bin
+
     # CLI stuff
     fastfetch
     ripgrep
