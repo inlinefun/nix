@@ -6,7 +6,7 @@
 
   services = {
     desktopManager.gnome.enable = true;
-    displayManager.ly.enable = true;
+    displayManager.gdm.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
