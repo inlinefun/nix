@@ -13,7 +13,7 @@
         enable = true;
         efiSupport = true;
         secureBoot = {
-          # enable = true;
+          enable = true;
         };
       };
       systemd-boot.enable = lib.mkForce false;
