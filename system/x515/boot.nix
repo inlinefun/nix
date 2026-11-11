@@ -18,14 +18,12 @@ in
         secureBoot = {
           enable = true;
         };
-        extraEntries = [
-          ''
-            /Windows 11
-                protocol: efi
-                path: guid(${windowsPartitionUUID}):/EFI/Microsoft/Boot/bootmgfw.efi
-                comment: :woe:
-          ''
-        ];
+        extraEntries = ''
+          /Windows 11
+              protocol: efi
+              path: guid(${windowsPartitionUUID}):/EFI/Microsoft/Boot/bootmgfw.efi
+              comment: :woe:
+        '';
       };
       systemd-boot.enable = lib.mkForce false;
       grub.enable = lib.mkForce false;
