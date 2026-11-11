@@ -50,6 +50,14 @@
         "compress=zstd"
       ];
     };
+    "/var/lib/docker" = {
+      device = "/dev/disk/by-label/nixos";
+      fsType = "btrfs";
+      options = [
+        "subvol=@docker"
+        "compress=zstd"
+      ];
+    };
     "/boot" = {
       device = "/dev/disk/by-label/grub";
       fsType = "vfat";
