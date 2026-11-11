@@ -5,19 +5,6 @@
 
 {
 
-  boot = {
-    loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-        useOSProber = true;
-      };
-    };
-    kernelPackages = pkgs.linuxPackages_latest;
-  };
-
   i18n.defaultLocale = "en_US.UTF-8";
 
   networking = {
