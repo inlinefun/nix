@@ -58,6 +58,25 @@
         "type": "github"
       }
     },
+    "hjem-impure": {
+      "inputs": {
+        "hjem": [],
+        "nixpkgs": []
+      },
+      "locked": {
+        "lastModified": 1791632013,
+        "narHash": "sha256-xkatHz2jk+a9ItymU6zVob3LO5mOyGhYr4EAg38U4KM=",
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "rev": "9f54caff3b90d48e710dbadf523e181a549f09ee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1793726008,
@@ -78,6 +97,7 @@
       "inputs": {
         "basix": "basix",
         "hjem": "hjem",
+        "hjem-impure": "hjem-impure",
         "nixpkgs": "nixpkgs"
       }
     }
