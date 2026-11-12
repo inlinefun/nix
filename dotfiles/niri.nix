@@ -1,9 +1,12 @@
 {
-  dots,
+  config,
   username,
   ...
 }:
 
+let
+  dots = config.hjem.users.${username}.impure.dotsDir;
+in
 {
 
   config = {
