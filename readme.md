@@ -21,6 +21,8 @@ Lots of work to be done.
 
 ### Extra notes:
 
+Consider flatpak for Android Studio if things do not work out very well
+
 Versions from Jetbrains ToolBox:
 1. IntelliJ IDEA:
     - Version 2026.2.3
