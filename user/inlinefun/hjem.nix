@@ -9,11 +9,13 @@ args@{
     (import ../../dotfiles args)
   ];
 
-  hjem.users.${username} = {
-    enable = true;
+  hjem = {
     clobberByDefault = true;
-    user = username;
-    directory = "/home/${username}";
+    users.${username} = {
+      enable = true;
+      user = username;
+      directory = "/home/${username}";
+    };
   };
 
 }
