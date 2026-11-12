@@ -21,6 +21,7 @@
       nixpkgs,
       basix,
       hjem,
+      hjem-impure,
       ...
     }:
     {
