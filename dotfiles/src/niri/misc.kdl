@@ -1,0 +1,44 @@
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
+switch-events {
+    lid-close { spawn "hyprlock"; }
+}
+
+environment {
+    QT_QPA_PLATFORM "wayland;xcb"
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}
+
+overview {
+    zoom 0.9
+    workspace-shadow {
+        softness 15
+        spread 0
+        offset x=0 y=0
+        color "#00000088"
+    }
+}
+
+blur {
+    passes 3
+    offset 3.0
+    noise 0.0
+    saturation 1.0
+}
+
+recent-windows {
+    off
+}
+
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
+spawn-at-startup "systemctl" "--user" "start" "hyprpaper.service"
+spawn-at-startup "systemctl" "--user" "start" "hyprpolkitagent.service"
+spawn-at-startup "quickshell" "--no-duplicate" "--daemonize" "--config" "lazyshell"

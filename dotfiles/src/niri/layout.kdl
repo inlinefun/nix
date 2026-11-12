@@ -1,0 +1,28 @@
+layout {
+    gaps 5
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.25
+        proportion 0.5
+        proportion 0.75
+    }
+    default-column-width { proportion 0.5; }
+    focus-ring {
+        off
+    }
+    border {
+        on
+        width 2
+    }
+    shadow {
+        on
+        // Softness controls the shadow blur radius.
+        softness 15
+        // Spread expands the shadow.
+        spread 0
+        // Offset moves the shadow relative to the window.
+        offset x=0 y=0
+        // You can also change the shadow color and opacity.
+        color "#00000088"
+    }
+}
