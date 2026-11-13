@@ -5,3 +5,5 @@ include "layout.kdl"
 include "misc.kdl"
 include "output.kdl"
 include "rules.kdl"
+
+include "generated.kdl"

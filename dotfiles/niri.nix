@@ -1,6 +1,8 @@
 {
   dots,
   username,
+  palette,
+  primary,
   ...
 }:
 
@@ -16,6 +18,19 @@
       "niri/misc.kdl".source = "${dots}/niri/misc.kdl";
       "niri/output.kdl".source = "${dots}/niri/output.kdl";
       "niri/rules.kdl".source = "${dots}/niri/rules.kdl";
+      "niri/generated.kdl".text = ''
+        layout {
+            border {
+                active-color "${primary}"
+                inactive-color "${palette.base03}"
+                urgent-color "${palette.base08}"
+            }
+        }
+
+        overview {
+            backdrop-color "${palette.base00}"
+        }
+      '';
     };
   };
 

@@ -29,12 +29,15 @@
         x515 = nixpkgs.lib.nixosSystem {
           specialArgs =
             let
-              scheme = "0x96f";
+              scheme = "catppuccin-mocha";
+              theme = basix.schemeData.base24."${scheme}";
             in
             {
               inherit inputs;
-              theme = basix.schemeData.base24."${scheme}";
-              palette = basix.schemeData.base24."${scheme}".palette;
+              theme = theme;
+              primary = theme.palette.base0E;
+              secondary = theme.palette.base0D;
+              palette = theme.palette;
             };
           modules = [
             hjem.nixosModules.default
